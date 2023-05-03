@@ -135,6 +135,8 @@ Route::get('/logout', [LoginController::class, 'destroy'])
         Route::post('/registrar', [RegisterController::class, 'registrar'])
         ->name('registrar_usuario.index');
 
+        Route::post('/registrar_masivamente', [RegisterController::class, 'registrar_csv'])
+        ->name('registrar_usuario_csv.index');
          //cambiar datos usuario
         Route::match(['post','get','delete'],'/ver_datos_usuario_{id}', [UsuariosController::class, 'ver_datos_usuario'])
         ->name('ver_datos_usuario.index');

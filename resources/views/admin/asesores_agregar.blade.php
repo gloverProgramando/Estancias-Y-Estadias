@@ -29,7 +29,7 @@
                 </form>
                 <form action="{{ route('asesores_subir_E.index')}}" class="form-group"  style="padding-top:1%" method="POST" enctype="multipart/form-data">
                     @csrf
-                    <label for="csv_ae" style="padding-top: 1%; padding-bottom:1%">Subir Archivo CSV para Asesores Empresariales y Empresas</label>
+                    <label for="csv_ae" style="padding-top: 1%; padding-bottom:1%">Subir Archivo CSV para Empresas</label>
                     <input type="file" name="csv_ae" id="csv_ae" class="form-control">
                     <button type="submit" class="btn btn-dark">Subir</button>
                 </form>

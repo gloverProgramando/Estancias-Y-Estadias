@@ -44,12 +44,16 @@
                         <button class="btn btn-warning " type="submit">Darse De Alta En Periodo</button>
                         <div class="row mt-3" style="padding: 1%">
                             <div class="form-group col">
-                                <label class="form-label" for="asesorempresarial">Asesor Empresarial</label>
-                                <select class="form-control" name="asesorempresarial" id="asesorempresarial">
+                                <label class="form-label" for="asesorempresarial">Asesor Empresarial</label>                                
+                                <input class="form-control" type="text" name="asesorempresarial" id="asesorempresarial" placeholder="Nombre Completo Asesor Empresarial">
+                            </div>
+                            <div class="form-group col">
+                                <label class="form-label" for="empresa">Asesor Empresarial</label>
+                                <select class="form-control" name="empresa" id="empresa">
                                     <option value="">Seleccionar un dato</option>
-                                    @foreach ($ae as $empresarial)
-                                        <option value="{{ $empresarial->IdAE }}">
-                                            {{ $empresarial->APP . ' ' . $empresarial->APM . ' ' . $empresarial->Nombre }}
+                                    @foreach ($empresas as $empresa)
+                                        <option value="{{ $empresa->IdEmp }}">
+                                            {{ $empresa->Nombre }}
                                         </option>
                                     @endforeach
                                 </select>

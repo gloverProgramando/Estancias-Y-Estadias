@@ -6,6 +6,8 @@ namespace App\Http\Controllers;
 use App\Models\documentos;
 use App\Models\aa_pp;
 use App\Models\ae_pp;
+use App\Models\Asesor_Emp;
+use App\Models\emp_pp;
 use App\Models\tipodoc;
 use App\Models\detalledoc;
 use App\Models\estadodoc;
@@ -46,9 +48,12 @@ class Estancia1Controller extends Controller
                 $request->validate([
                     'asesorempresarial' => 'required',
                     'asesoracademico' => 'required',
+                    'empresa' => 'required',
                 ]);
                 $asesorEmpresarial = $request->input('asesorempresarial');
                 $asesorAcademico = $request->input('asesoracademico');
+                $empresa = $request->input('empresa');
+
                 $proceso = new proceso;
                 $proceso->IdUsuario = $idUsuario;
                 $proceso->IdTipoProceso = $procesos;
@@ -59,10 +64,20 @@ class Estancia1Controller extends Controller
                 $relacionAA->IdAsesor = $asesorAcademico;
                 $relacionAA->IdProceso = $idProceso;
                 $relacionAA->save();
+                
+                $AE = new Asesor_emp;
+                $AE->Nombre = $asesorEmpresarial;
+                $AE->save();
+                $idAE=$AE->IdAE;
                 $relacionAE = new ae_pp;
-                $relacionAE->Idae = $asesorEmpresarial;
+                $relacionAE->IdAsesor = $idAE;
                 $relacionAE->IdProceso = $idProceso;
                 $relacionAE->save();
+                
+                $relacionEmp = new emp_pp;
+                $relacionEmp->IdEmp = $empresa;
+                $relacionEmp->IdProceso = $idProceso;
+                $relacionEmp->save();
                 return redirect('estancia1/' . $procesos)->with('success', 'Dado de alta en periodo actual');
             }
         }
@@ -90,14 +105,15 @@ class Estancia1Controller extends Controller
         ->get();
         $asesoresEmpresariales = DB::table('ae')->get();
         $asesoresAcademicos = DB::table('aa')->get();
+        $empresas = DB::table('empresa')->get();
         if ($proceso->count() == 0) {
 
         } else {
             $procesoActual = DB::table('periodo')
                 ->where('IdPeriodo', $proceso[0]->IdPeriodo)->get()->first();
-            return view('estancia1', ['proceso' => $var, 'documentos' => $tiposdocumentos, 'documentacion' => $documentos, 'ae' => $asesoresEmpresariales, 'aa' => $asesoresAcademicos, 'periodoActual'=>$procesoActual]);
+            return view('estancia1', ['proceso' => $var, 'documentos' => $tiposdocumentos, 'documentacion' => $documentos, 'ae' => $asesoresEmpresariales, 'aa' => $asesoresAcademicos, 'periodoActual'=>$procesoActual,'empresas'=>$empresas]);
         }
-        return view('estancia1', ['proceso' => $var, 'documentos' => $tiposdocumentos, 'documentacion' => $documentos, 'ae' => $asesoresEmpresariales, 'aa' => $asesoresAcademicos, 'periodoActual' =>null]);
+        return view('estancia1', ['proceso' => $var, 'documentos' => $tiposdocumentos, 'documentacion' => $documentos, 'ae' => $asesoresEmpresariales, 'aa' => $asesoresAcademicos, 'periodoActual' =>null,'empresas'=>$empresas]);
     }
 
     //subir documento sin datos carga horaria

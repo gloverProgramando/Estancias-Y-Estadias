@@ -20,7 +20,6 @@
         <div class="row">
             <div class="col-md-12 col-lg-12 d-flex align-items-center">
                 <div class="card-body p-4 p-lg-5 text-black">
-
                     <form method="POST" action="{{ route('registrar_usuario.index') }}">
                         @csrf
                         <div class="row">
@@ -111,15 +110,24 @@
                                 </div>
                             </div>
                         </div>
-
-
                     </form>
-
                 </div>
             </div>
         </div>
-
-
+        <div class="container">
+            <div class="row mx-auto">
+                <div class="card">
+                    <div class="card-body text-black form-group m-4">
+                        <form action=" {{ route('registrar_usuario_csv.index')}}" method="post" enctype="multipart/form-data">
+                            @csrf
+                            <label for="alumnoscsv" class="">Subir csv alumnos</label>
+                            <input type="file" name="alumnoscsv" id="alumnoscsv" class="form-control my-1">
+                            <button type="submit" value="Enviar" class="btn btn-dark">Subir Alumnos</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
     <!--====== Scripts -->
     <script src="./js/jquery-3.1.1.min.js"></script>

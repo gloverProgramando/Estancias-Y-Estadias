@@ -7,18 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use Exception;
 
-class ae_emp extends Model
+class emp_pp extends Model
 {
     use HasFactory;
-    protected $table = 'ae_emp';
+    protected $table = 'emp_pp';
     public $timestamps = false;
 
-
-    public static function requestInsertAe_emp($data) {
+    public static function requestInsertemp_pp($data) {
 
         try{
 
-            $response = self::insertAa($data);
+            $response = self::insertemp_pp($data);
             if (isset($response["code"]) && $response["code"] == 200) {
                 return $response;
             } else {
@@ -29,11 +28,11 @@ class ae_emp extends Model
                 "code" => 500,
                 "success" => false,
                 "message" => $e->getMessage()
-            );
+              );
         }
     }
 
-    public static function insertAa($data) {
+    public static function insertemp_pp($data) {
 
         $arrayResponse = array();
 
