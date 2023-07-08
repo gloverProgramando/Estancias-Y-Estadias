@@ -11,6 +11,7 @@ class Asesor_Aca extends Model
 {
     use HasFactory;
     protected $table = 'aa';
+    public $timestamps = false;
 
 
     public static function requestInsertAa($data) {

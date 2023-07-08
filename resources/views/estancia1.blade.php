@@ -44,7 +44,7 @@
                         <button class="btn btn-warning " type="submit">Darse De Alta En Periodo</button>
                         <div class="row mt-3" style="padding: 1%">
                             <div class="form-group col">
-                                <label class="form-label" for="asesorempresarial">Asesor Empresarial</label>                                
+                                <label class="form-label" for="asesorempresarial">Asesor Empresarial</label>
                                 <input class="form-control" type="text" name="asesorempresarial" id="asesorempresarial" placeholder="Nombre Completo Asesor Empresarial">
                             </div>
                             <div class="form-group col">
@@ -204,3 +204,7 @@
 </script>
 
 </html>
+
+<style>
+
+</style>

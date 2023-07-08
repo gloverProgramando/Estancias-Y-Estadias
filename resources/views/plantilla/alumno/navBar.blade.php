@@ -33,8 +33,12 @@
                     <a class="nav-link" href="{{ route('fallos.index') }}">Soporte</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="{{ route('vistaEmpresa.index') }}">Empresa</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="{{ route('login.destroy') }}">Cerrar Sesión</a>
                 </li>
+
 
             </ul>
 

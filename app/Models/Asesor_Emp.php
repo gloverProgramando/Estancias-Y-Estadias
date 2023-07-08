@@ -11,6 +11,7 @@ class Asesor_Emp extends Model
 {
     use HasFactory;
     protected $table = 'ae';
+    public $timestamps = false;
 
 
     public static function requestInsertAa($data) {

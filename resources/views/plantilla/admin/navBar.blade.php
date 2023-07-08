@@ -40,6 +40,9 @@
                     <a class="nav-link" href="{{ route('asesores.index') }}">Asesores</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="{{ route('vistaadminempresa.index') }}">Empresa</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="{{ route('login.destroy') }}">Cerrar Sesión</a>
                 </li>
             </ul>

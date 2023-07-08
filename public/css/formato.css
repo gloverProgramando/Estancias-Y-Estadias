@@ -1,3 +1,19 @@
 .btnDes{
     width: 100%;
 }
+
+.container {
+background-color: #fff; /* Color de fondo */
+padding: 20px; /* Relleno interno */
+border: 1px solid black; /* Borde */
+}
+.box {
+width: 300px; /* Ancho */
+height: 200px; /* Alto */
+margin: auto; /* Centrar horizontal y verticalmente */
+background-color: yellow; /* Color de fondo */
+color: red; /* Color del texto */
+text-align: center; /* Alineación del texto */
+line-height: 200px; /* Espacio entre líneas (vertical) */
+font-size: 50px; /* Tamaño*/
+}

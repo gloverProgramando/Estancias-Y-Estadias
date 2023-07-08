@@ -5,11 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Arr;
 use Exception;
 
 class Empresa extends Model
 {
     protected $table = 'empresa';
+    protected $primaryKey='IdEmp';
+    public $timestamps = false;
 
     /**
      * LLamada a la peticion para agregar un nuevo marcador
@@ -31,7 +34,7 @@ class Empresa extends Model
                 "code" => 500,
                 "success" => false,
                 "message" => $e->getMessage()
-              );
+            );
         }
     }
 
@@ -45,7 +48,7 @@ class Empresa extends Model
 
         try{
             $empresaId = DB::table('empresa')->insertGetId($data);
-            
+
             $arrayResponse = array(
                 "code"      => 200,
                 "message"   => "Se ha agragado el registro",

@@ -47,7 +47,7 @@
 								</div>
 							</div>
 							<div class="col-6 col-sm-6 col-md-5 col-lg-3 col-xl-3 p-1 colLlenar  ">
-												
+
 							</div>
 							<!--DOC carga horaria-->
 							<div class="col-12 col-sm-12 col-md-12 col-lg-7 p-1 colArchivo">
@@ -73,18 +73,18 @@
 																			<button type="submit" class="btn btn-outline-danger btnCancelar" >Cancelar</button>
 																		</div>
 																	</div>
-																	
+
 																</form>
 															</div>
 															<div class="col-12 col-sm-3">
 																<a href="{{ route('observaciones_carga_horaria_estancia.index') }}">
 																	<button type="submit" class="btn btn-outline-danger divObservacionf02" ><i class="zmdi zmdi-folder-person">  Observaciones</i> </button>
-																</a>	
+																</a>
 															</div>
-																			
-														</div>																																					
+
+														</div>
 													@break
-												
+
 													@case(1)
 													<!--pendiente-->
 													<div class="row">
@@ -101,7 +101,7 @@
 																	<div class="col-12 col-sm-3 px-3 py-1">
 																		<button type="submit" class="btn btn-outline-danger btnCancelar" >Cancelar</button>
 																	</div>
-																</div>																			
+																</div>
 															</form>
 														</div>
 														<div class="col-12 col-sm-3">
@@ -116,7 +116,7 @@
 																<div class="col-12 col-sm-3 px-3 py-1" >
 																	<div class="divAceptadof02"><i class="zmdi zmdi-check-circle-u">  Aceptado</i> </div>
 																</div>
-															</div>																			
+															</div>
 													@break
 													@default
 															<p>Error</p>
@@ -125,7 +125,7 @@
 										</div>
 									@empty
 									<!-- enviar carga horaria con datos-->
-										@forelse ($documentos['documentos'] as $dato)														
+										@forelse ($documentos['documentos'] as $dato)
 											<form action="{{ route('actualizar_carga_horaria_estancia.index',[auth()->user()->name,$datoD->name]) }}" method="post" enctype="multipart/form-data" >
 												@csrf
 													<input type="text" class="id_d" value="{{$datoD->id_documentos}}" name="id_doc_carga_horaria">
@@ -135,11 +135,11 @@
 													</span>
 													<button type="submit" class="btn btn-outline-info btnSubir">Enviar</button>
 											</form>
-											
+
 										@empty
 											Error
-										@endforelse	
-									@endforelse	
+										@endforelse
+									@endforelse
 								@empty
 									<!-- enviar carga horaria vacio-->
 									<form action="{{ route('subir_carga_horaria_estancia.index',[auth()->user()->name,auth()->user()->name]) }}" method="post" enctype="multipart/form-data" >
@@ -150,9 +150,9 @@
 										</span>
 										<button type="submit" class="btn btn-outline-info btnSubir">Enviar</button>
 									</form>
-								@endforelse			
+								@endforelse
 							</div>
-							<!--error carga_horaria-->				
+							<!--error carga_horaria-->
 							@error('carga_horaria')
 								<p class="border border-danger rounded-md bg-red-200 w-full text-red-600 p-2 my-2">{{ $message }}</p>
 							@enderror
@@ -165,9 +165,9 @@
 								<div class="ms-2 me-auto">
 									Constancia de vigencia de derechos del IMSS
 								</div>
-							</div>								
+							</div>
 							<div class="col-6 col-sm-6 col-md-5 col-lg-3 col-xl-3 p-1 colLlenar  ">
-												
+
 							</div>
 							<!--DOC constancia derecho-->
 							<div class="col-12 col-sm-12 col-md-12 col-lg-7 p-1 colArchivo">
@@ -193,18 +193,18 @@
 																			<button type="submit" class="btn btn-outline-danger btnCancelar" >Cancelar</button>
 																		</div>
 																	</div>
-																	
+
 																</form>
 															</div>
 															<div class="col-12 col-sm-3">
 																<a href="{{ route('obsevaciones_constancia_derecho_estancia.index') }}">
 																	<button type="submit" class="btn btn-outline-danger divObservacionf02" ><i class="zmdi zmdi-folder-person">  Observaciones</i> </button>
-																</a>	
+																</a>
 															</div>
-																			
-														</div>																																					
+
+														</div>
 													@break
-												
+
 													@case(1)
 													<!--pendiente-->
 													<div class="row">
@@ -221,7 +221,7 @@
 																	<div class="col-12 col-sm-3 px-3 py-1">
 																		<button type="submit" class="btn btn-outline-danger btnCancelar" >Cancelar</button>
 																	</div>
-																</div>																			
+																</div>
 															</form>
 														</div>
 														<div class="col-12 col-sm-3">
@@ -237,7 +237,7 @@
 															<div class="col-12 col-sm-3 px-3 py-1" >
 																<div class="divAceptadof02"><i class="zmdi zmdi-check-circle-u">  Aceptado</i> </div>
 															</div>
-														</div>																			
+														</div>
 													@break
 													@default
 														<p>Error</p>
@@ -246,7 +246,7 @@
 										</div>
 									@empty
 									<!-- enviar constancia derecho con datos-->
-										@forelse ($documentos['documentos'] as $dato)														
+										@forelse ($documentos['documentos'] as $dato)
 											<form action="{{ route('actualizar_constancia_derecho_estancia.index',[auth()->user()->name,$datoD->name]) }}" method="post" enctype="multipart/form-data" >
 												@csrf
 													<input type="text" class="id_d" value="{{$datoD->id_documentos}}" name="id_doc_constancia_derecho">
@@ -256,11 +256,11 @@
 													</span>
 													<button type="submit" class="btn btn-outline-info btnSubir">Enviar</button>
 											</form>
-											
+
 										@empty
 											Error
-										@endforelse	
-									@endforelse	
+										@endforelse
+									@endforelse
 								@empty
 									<!-- enviar constancia derecho vacio-->
 									<form action="{{ route('subir_constancia_derecho_estancia.index',[auth()->user()->name,auth()->user()->name]) }}" method="post" enctype="multipart/form-data" >
@@ -271,12 +271,12 @@
 										</span>
 										<button type="submit" class="btn btn-outline-info btnSubir">Enviar</button>
 									</form>
-								@endforelse			
+								@endforelse
 							</div>
-							<!--error constancia derecho-->				
+							<!--error constancia derecho-->
 							@error('constancia derecho')
 								<p class="border border-danger rounded-md bg-red-200 w-full text-red-600 p-2 my-2">{{ $message }}</p>
-							@enderror	
+							@enderror
 						</div>
 					</li>
 					<!--Formato de carta responsiva-->
@@ -287,15 +287,15 @@
 									Formato de carta responsiva
 								</div>
 							</div>
-						
-								
+
+
 							<div class="col-6 col-sm-12 col-md-3 col-lg-2 col-xl-2 p-1 colDescargar text-left">
 								<a href="{{ route('descarga_carta_responsiva.index') }}">
 									<button type="button" class="btn btn-outline-info btnDescargar"><i class="zmdi zmdi-download"> Descargar</i></button>
 								</a>
 							</div>
 							<div class="col-6 col-sm-6 col-md-5 col-lg-3 col-xl-1 p-1 colLlenar  ">
-												
+
 							</div>
 							<!--DOC carta responsiva-->
 							<div class="col-12 col-sm-12 col-md-12 col-lg-7 p-1 colArchivo">
@@ -321,18 +321,18 @@
 																			<button type="submit" class="btn btn-outline-danger btnCancelar" >Cancelar</button>
 																		</div>
 																	</div>
-																	
+
 																</form>
 															</div>
 															<div class="col-12 col-sm-3">
 																<a href="{{ route('obsevaciones_carta_responsiva_estancia.index') }}">
 																	<button type="submit" class="btn btn-outline-danger divObservacionf02" ><i class="zmdi zmdi-folder-person">  Observaciones</i> </button>
-																</a>	
+																</a>
 															</div>
-																			
-														</div>																																					
+
+														</div>
 													@break
-												
+
 													@case(1)
 													<!--pendiente-->
 													<div class="row">
@@ -349,7 +349,7 @@
 																	<div class="col-12 col-sm-3 px-3 py-1">
 																		<button type="submit" class="btn btn-outline-danger btnCancelar" >Cancelar</button>
 																	</div>
-																</div>																			
+																</div>
 															</form>
 														</div>
 														<div class="col-12 col-sm-3">
@@ -365,7 +365,7 @@
 															<div class="col-12 col-sm-3 px-3 py-1" >
 																<div class="divAceptadof02"><i class="zmdi zmdi-check-circle-u">  Aceptado</i> </div>
 															</div>
-														</div>																			
+														</div>
 													@break
 													@default
 														<p>Error</p>
@@ -374,7 +374,7 @@
 										</div>
 									@empty
 									<!-- enviar carta responsiva con datos-->
-										@forelse ($documentos['documentos'] as $dato)														
+										@forelse ($documentos['documentos'] as $dato)
 											<form action="{{ route('actualizar_carta_responsiva_estancia.index',[auth()->user()->name,$datoD->name]) }}" method="post" enctype="multipart/form-data" >
 												@csrf
 													<input type="text" class="id_d" value="{{$datoD->id_documentos}}" name="id_doc_carta_responsiva">
@@ -384,11 +384,11 @@
 													</span>
 													<button type="submit" class="btn btn-outline-info btnSubir">Enviar</button>
 											</form>
-											
+
 										@empty
 											Error
-										@endforelse	
-									@endforelse	
+										@endforelse
+									@endforelse
 								@empty
 									<!-- enviar carta responsiva vacio-->
 									<form action="{{ route('subir_carta_responsiva_estancia.index',[auth()->user()->name,auth()->user()->name]) }}" method="post" enctype="multipart/form-data" >
@@ -399,12 +399,12 @@
 										</span>
 										<button type="submit" class="btn btn-outline-info btnSubir">Enviar</button>
 									</form>
-								@endforelse			
+								@endforelse
 							</div>
-							<!--error carta responsiva-->				
+							<!--error carta responsiva-->
 							@error('carta_responsiva')
 								<p class="border border-danger rounded-md bg-red-200 w-full text-red-600 p-2 my-2">{{ $message }}</p>
-							@enderror	
+							@enderror
 						</div>
 					</li>
 					<!-- f01 -->
@@ -416,14 +416,14 @@
 									Carta de Presentación
 								</div>
 							</div>
-						
+
 							<!--Descargar 01-->
 							<div class="col-6 col-sm-12 col-md-3 col-lg-2 col-xl-2 p-1 colDescargar text-left">
 								<a href="{{ route('descarga_cd_estancia_f01.index') }}">
 									<button type="button" class="btn btn-outline-info btnDescargar"><i class="zmdi zmdi-download"> Descargar</i></button>
 								</a>
 							</div>
-							<div class="col-6 col-sm-6 col-md-5 col-lg-3 col-xl-1 p-1 colLlenar  ">				
+							<div class="col-6 col-sm-6 col-md-5 col-lg-3 col-xl-1 p-1 colLlenar  ">
 							</div>
 							<!--DOC 01-->
 							<div class="col-12 col-sm-12 col-md-12 col-lg-7 p-1 colArchivo">
@@ -449,18 +449,18 @@
 																			<button type="submit" class="btn btn-outline-danger btnCancelar" >Cancelar</button>
 																		</div>
 																	</div>
-																	
+
 																</form>
 															</div>
 															<div class="col-12 col-sm-3">
 																<a href="{{ route('obsevaciones_f01_estancia.index') }}">
 																	<button type="submit" class="btn btn-outline-danger divObservacionf02" ><i class="zmdi zmdi-folder-person">  Observaciones</i> </button>
-																</a>	
+																</a>
 															</div>
-																			
-														</div>																																					
+
+														</div>
 													@break
-												
+
 													@case(1)
 													<!--pendiente-->
 													<div class="row">
@@ -477,7 +477,7 @@
 																	<div class="col-12 col-sm-3 px-3 py-1">
 																		<button type="submit" class="btn btn-outline-danger btnCancelar" >Cancelar</button>
 																	</div>
-																</div>																			
+																</div>
 															</form>
 														</div>
 														<div class="col-12 col-sm-3">
@@ -492,7 +492,7 @@
 																<div class="col-12 col-sm-3 px-3 py-1" >
 																	<div class="divAceptadof02"><i class="zmdi zmdi-check-circle-u">  Aceptado</i> </div>
 																</div>
-															</div>																			
+															</div>
 													@break
 													@default
 															<p>Error</p>
@@ -501,7 +501,7 @@
 										</div>
 									@empty
 									<!-- enviar cedula registro con datos-->
-										@forelse ($documentos['documentos'] as $dato)														
+										@forelse ($documentos['documentos'] as $dato)
 											<form action="{{ route('actualizar_f01_estancia.index',[auth()->user()->name,$datoD->name]) }}" method="post" enctype="multipart/form-data" >
 												@csrf
 													<input type="text" class="id_d" value="{{$datoD->id_documentos}}" name="id_docf01">
@@ -511,11 +511,11 @@
 													</span>
 													<button type="submit" class="btn btn-outline-info btnSubir">Enviar</button>
 											</form>
-											
+
 										@empty
 											Error
-										@endforelse	
-									@endforelse	
+										@endforelse
+									@endforelse
 								@empty
 								<!-- enviar cedula registro vacio-->
 									<form action="{{ route('subir_f01_estancia.index',[auth()->user()->name,auth()->user()->name]) }}" method="post" enctype="multipart/form-data" >
@@ -526,12 +526,12 @@
 										</span>
 										<button type="submit" class="btn btn-outline-info btnSubir">Enviar</button>
 									</form>
-								@endforelse			
+								@endforelse
 							</div>
-							<!--error f01-->				
+							<!--error f01-->
 							@error('f01')
 								<p class="border border-danger rounded-md bg-red-200 w-full text-red-600 p-2 my-2">{{ $message }}</p>
-							@enderror	
+							@enderror
 						</div>
 					</li>
 					<!-- f02 -->
@@ -549,7 +549,7 @@
 									<button type="button" class="btn btn-outline-info btnDescargar"><i class="zmdi zmdi-download"> Descargar</i></button>
 								</a>
 							</div>
-							<div class="col-6 col-sm-6 col-md-5 col-lg-3 col-xl-1 p-1 colLlenar  ">					
+							<div class="col-6 col-sm-6 col-md-5 col-lg-3 col-xl-1 p-1 colLlenar  ">
 							</div>
 							<div class="col-12 col-sm-12 col-md-12 col-lg-7 p-1 colArchivo">
 												@forelse ($documentos['documentos'] as $datoD)
@@ -574,18 +574,18 @@
 																											<button type="submit" class="btn btn-outline-danger btnCancelar" >Cancelar</button>
 																										</div>
 																									</div>
-																									
+
 																								</form>
 																							</div>
 																							<div class="col-12 col-sm-3">
 																								<a href="{{ route('obsevaciones_f02.index') }}">
 																									<button type="submit" class="btn btn-outline-danger divObservacionf02" ><i class="zmdi zmdi-folder-person">  Observaciones</i> </button>
-																								</a>	
+																								</a>
 																							</div>
-																											
-																						</div>																																					
+
+																						</div>
 																					@break
-																				
+
 																					@case(1)
 																					<!--pendiente-->
 																					<div class="row">
@@ -602,7 +602,7 @@
 																									<div class="col-12 col-sm-3 px-3 py-1">
 																										<button type="submit" class="btn btn-outline-danger btnCancelar" >Cancelar</button>
 																									</div>
-																								</div>																			
+																								</div>
 																							</form>
 																						</div>
 																						<div class="col-12 col-sm-3">
@@ -617,7 +617,7 @@
 																								<div class="col-12 col-sm-3 px-3 py-1" >
 																									<div class="divAceptadof02"><i class="zmdi zmdi-check-circle-u">  Aceptado</i> </div>
 																								</div>
-																							</div>																			
+																							</div>
 																					@break
 																					@default
 																							<p>Error</p>
@@ -626,7 +626,7 @@
 																		</div>
 														@empty
 														<!-- enviar cedula registro con datos-->
-															@forelse ($documentos['documentos'] as $dato)														
+															@forelse ($documentos['documentos'] as $dato)
 																<form action="{{ route('actualizar_f02_estancia.index',[auth()->user()->name,$datoD->name]) }}" method="post" enctype="multipart/form-data" >
 																	@csrf
 																		<input type="text" class="id_d" value="{{$datoD->id_documentos}}" name="id_docf02">
@@ -636,11 +636,11 @@
 																		</span>
 																		<button type="submit" class="btn btn-outline-info btnSubir">Enviar</button>
 																</form>
-																
+
 															@empty
 																Error
-															@endforelse	
-														@endforelse	
+															@endforelse
+														@endforelse
 												@empty
 												<!-- enviar cedula registro vacio-->
 													<form action="{{ route('subir_f02_estancia.index',[auth()->user()->name,auth()->user()->name]) }}" method="post" enctype="multipart/form-data" >
@@ -651,13 +651,13 @@
 														</span>
 														<button type="submit" class="btn btn-outline-info btnSubir">Enviar</button>
 													</form>
-												@endforelse			
+												@endforelse
 							</div>
-							<!--Error 01-->						
+							<!--Error 01-->
 							@error('f02')
 								<p class="border border-danger rounded-md bg-red-200 w-full text-red-600 p-2 my-2">{{ $message }}</p>
-							@enderror													
-										
+							@enderror
+
 						</div>
 					</li>
 					<!-- f03 -->
@@ -669,10 +669,10 @@
 									Cédula de Registro
 								</div>
 							</div>
-						
-								
+
+
 							@forelse ($datos['datosCedula'] as $dato)
-								
+
 								<div class="col-12 col-sm-12 col-md-12 col-lg-10 p-1 colArchivo">
 									@forelse ($documentos['documentos'] as $datoD)
 											@forelse ($documentos['cedula_registro'] as $datoC)
@@ -687,7 +687,7 @@
 																		<form class="btn-eliminarCR-system" method="post" action="{{ route('eliminar_f03',[$dato->id_alumno,$dato->id_empresa,$dato->id_asesor_emp,$dato->id_asesor_aca,$dato->id_proyecto]) }}">
 																			@csrf
 																			<button type="submit" class="btn btn-outline-danger btnCancelar" >Eliminar</button>
-																		</form>											
+																		</form>
 																	</div>
 																	<!--Descargar F03-->
 																	<div class="col-6 col-sm-6 col-md-1 py-1 colDescargar text-center">
@@ -709,18 +709,18 @@
 																					<button type="submit" class="btn btn-outline-danger btnCancelar" >Cancelar</button>
 																				</div>
 																			</div>
-																			
+
 																		</form>
 																	</div>
 																	<div class="col-12 col-sm-2">
 																		<a href="{{ route('obsevaciones_f03.index') }}">
 																			<button type="submit" class="btn btn-outline-danger divObservacionf02" ><i class="zmdi zmdi-folder-person">  Observaciones</i> </button>
-																		</a>	
+																		</a>
 																	</div>
-																					
-																</div>																																					
+
+																</div>
 															@break
-														
+
 															@case(1)
 															<!--pendiente-->
 															<div class="row">
@@ -729,7 +729,7 @@
 																	<form class="btn-eliminarCR-system" method="post" action="{{ route('eliminar_f03',[$dato->id_alumno,$dato->id_empresa,$dato->id_asesor_emp,$dato->id_asesor_aca,$dato->id_proyecto]) }}">
 																		@csrf
 																		<button type="submit" class="btn btn-outline-danger btnCancelar" >Eliminar</button>
-																	</form>											
+																	</form>
 																</div>
 																<!--Descargar F03-->
 																<div class="col-12 col-sm-12 col-md-3 col-lg-2 col-xl-1 p-1 colDescargar text-center">
@@ -750,7 +750,7 @@
 																			<div class="col-12 col-sm-3 px-3 py-1">
 																				<button type="submit" class="btn btn-outline-danger btnCancelar" >Cancelar</button>
 																			</div>
-																		</div>																			
+																		</div>
 																	</form>
 																</div>
 																<div class="col-12 col-sm-2">
@@ -766,7 +766,7 @@
 																			</a>
 																		</div>
 																		<div class="col-0 col-md-2 py-1 colDescargar text-center">
-																			
+
 																		</div>
 																		<div class="col-12 col-sm-7 px-3 py-1" >
 																			<input type="text" value="{{$datoC->nombre_c_r}}" class="nombreDoc" disabled>
@@ -774,7 +774,7 @@
 																		<div class="col-12 col-sm-2 px-3 py-1" >
 																			<div class="divAceptadof02"><i class="zmdi zmdi-check-circle-u">  Aceptado</i> </div>
 																		</div>
-																	</div>																			
+																	</div>
 															@break
 															@default
 																	<p>Error</p>
@@ -788,7 +788,7 @@
 														<form class="btn-eliminarCR-system" method="post" action="{{ route('eliminar_f03',[$dato->id_alumno,$dato->id_empresa,$dato->id_asesor_emp,$dato->id_asesor_aca,$dato->id_proyecto]) }}">
 															@csrf
 															<button type="submit" class="btn btn-outline-danger btnCancelar" >Eliminar</button>
-														</form>											
+														</form>
 													</div>
 													<!--Descargar F03-->
 													<div class="col-6 col-sm-6 col-md-1 py-1 colDescargar text-center">
@@ -798,7 +798,7 @@
 													</div>
 													<div class="col-12 col-md-9 py-1">
 														<!-- enviar cedula registro con datos-->
-														@forelse ($documentos['documentos'] as $dato)														
+														@forelse ($documentos['documentos'] as $dato)
 															<form action="{{ route('actualizar_f03_estancia.index',[auth()->user()->name,$datoD->name]) }}" method="post" enctype="multipart/form-data" >
 																@csrf
 																	<input type="text" class="id_d" value="{{$datoD->id_documentos}}" name="id_docf03">
@@ -810,11 +810,11 @@
 															</form>
 														@empty
 														Error
-														@endforelse	
+														@endforelse
 													</div>
 												</div>
-											
-											@endforelse	
+
+											@endforelse
 									@empty
 										<div class="row">
 											<!--ELIMINAR F03-->
@@ -822,7 +822,7 @@
 												<form class="btn-eliminarCR-system" method="post" action="{{ route('eliminar_f03',[$dato->id_alumno,$dato->id_empresa,$dato->id_asesor_emp,$dato->id_asesor_aca,$dato->id_proyecto]) }}">
 													@csrf
 													<button type="submit" class="btn btn-outline-danger btnCancelar" >Eliminar</button>
-												</form>											
+												</form>
 											</div>
 											<!--Descargar F03-->
 											<div class="col-6 col-sm-6 col-md-1 py-1 colDescargar text-center">
@@ -841,9 +841,9 @@
 													<button type="submit" class="btn btn-outline-info btnSubir">Enviar</button>
 												</form>
 											</div>
-										</div>					
-									@endforelse			
-								</div>			
+										</div>
+									@endforelse
+								</div>
 							@empty
 								<!-- llenar cedula registro vacio-->
 								<div class="col-6 col-sm-6 col-md-6 col-lg-2 col-xl-2 p-1 colLlenar">
@@ -851,28 +851,28 @@
 										<button type="button" class="btn btn-outline-dark btnLlenar" >Llenar Cedula de Registro</button>
 									</a>
 								</div>
-											
+
 								<div class="col-12 col-sm-12 col-md-12 col-lg-8 colArchivo">
-													
+
 								</div>
-							@endforelse	
-							<!--error 03-->				
+							@endforelse
+							<!--error 03-->
 							@error('f03')
 								<p class="border border-danger rounded-md bg-red-200 w-full text-red-600 p-2 my-2">{{ $message }}</p>
-							@enderror												
+							@enderror
 						</div>
 					</li>
 					<!--f04-->
 					<li class="list-group-item d-flex justify-content-between align-items-start" style="border: 1px solid rgb(210, 210, 210);">
-						<div class="row lista">	
+						<div class="row lista">
 						<div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2">
 								<div class="ms-2 me-auto">
 									<div class="fw-bold">F04</div>
 									Definición de Proyecto
 								</div>
 							</div>
-							
-							@forelse ($definicionP['datosDef'] as $dato)							
+
+							@forelse ($definicionP['datosDef'] as $dato)
 								<div class="col-12 col-sm-12 col-md-12 col-lg-10 p-1 colArchivo">
 									@forelse ($documentos['documentos'] as $datoD)
 											@forelse ($etapas['definicion_proyecto'] as $datoDP)
@@ -890,7 +890,7 @@
 																							<input type="text" name="id_etapas_{{$datoE->numero}}" value="{{$datoE->id}}" class="id_d" >
 																						@endforeach
 																						<button type="submit" class="btn btn-outline-danger btnCancelar" >Eliminar</button>
-																					</form>											
+																					</form>
 																				</div>
 																				<!--Descargar F04-->
 																				<div class="col-6 col-sm-6 col-md-1 py-1 colDescargar text-centerr">
@@ -912,18 +912,18 @@
 																								<button type="submit" class="btn btn-outline-danger btnCancelar" >Cancelar</button>
 																							</div>
 																						</div>
-																						
+
 																					</form>
 																				</div>
 																				<div class="col-12 col-sm-2">
 																					<a href="{{ route('obsevaciones_f04.index') }}">
 																						<button type="submit" class="btn btn-outline-danger divObservacionf02" ><i class="zmdi zmdi-folder-person">  Observaciones</i> </button>
-																					</a>	
+																					</a>
 																				</div>
-																								
-																			</div>																																					
+
+																			</div>
 																		@break
-																	
+
 																		@case(1)
 																			<!--pendiente-->
 																			<div class="row">
@@ -935,7 +935,7 @@
 																							<input type="text" name="id_etapas_{{$datoE->numero}}" value="{{$datoE->id}}" class="id_d" >
 																						@endforeach
 																						<button type="submit" class="btn btn-outline-danger btnCancelar" >Eliminar</button>
-																					</form>											
+																					</form>
 																				</div>
 																				<!--Descargar F04-->
 																				<div class="col-6 col-sm-6 col-md-1 p-1 colDescargar text-centerr">
@@ -956,7 +956,7 @@
 																							<div class="col-12 col-sm-3 px-3 py-1">
 																								<button type="submit" class="btn btn-outline-danger btnCancelar" >Cancelar</button>
 																							</div>
-																						</div>																			
+																						</div>
 																					</form>
 																				</div>
 																				<div class="col-12 col-sm-2">
@@ -974,7 +974,7 @@
 																						</a>
 																					</div>
 																					<div class="col-0 col-md-2 py-1 colDescargar text-centerr">
-																						
+
 																					</div>
 																					<div class="col-12 col-sm-7 px-3 py-1" >
 																						<input type="text" value="{{$datoDP->nombre_d_p}}" class="nombreDoc" disabled>
@@ -982,7 +982,7 @@
 																					<div class="col-12 col-sm-2 px-3 py-1" >
 																						<div class="divAceptadof02"><i class="zmdi zmdi-check-circle-u">  Aceptado</i> </div>
 																					</div>
-																				</div>																			
+																				</div>
 																		@break
 																		@default
 																				<p>Error</p>
@@ -999,7 +999,7 @@
 																<input type="text" name="id_etapas_{{$datoE->numero}}" value="{{$datoE->id}}" class="id_d" >
 															@endforeach
 															<button type="submit" class="btn btn-outline-danger btnCancelar" >Eliminar</button>
-														</form>											
+														</form>
 													</div>
 													<!--Descargar F04-->
 													<div class="col-6 col-sm-6 col-md-1 py-1 colDescargar text-centerr">
@@ -1009,7 +1009,7 @@
 													</div>
 													<div class="col-12 col-md-9 py-1">
 														<!-- enviar cedula registro con datos-->
-														@forelse ($documentos['documentos'] as $dato)														
+														@forelse ($documentos['documentos'] as $dato)
 															<form action="{{ route('actualizar_f04_estancia.index',[auth()->user()->name,$datoD->name]) }}" method="post" enctype="multipart/form-data" >
 																@csrf
 																	<input type="text" class="id_d" value="{{$datoD->id_documentos}}" name="id_docf04">
@@ -1021,10 +1021,10 @@
 															</form>
 														@empty
 														Error
-														@endforelse	
+														@endforelse
 													</div>
 												</div>
-											@endforelse	
+											@endforelse
 									@empty
 										<div class="row">
 											<!--eliminar F04-->
@@ -1035,7 +1035,7 @@
 														<input type="text" name="id_etapas_{{$datoE->numero}}" value="{{$datoE->id}}" class="id_d" >
 													@endforeach
 													<button type="submit" class="btn btn-outline-danger btnCancelar" >Eliminar</button>
-												</form>											
+												</form>
 											</div>
 											<!--Descargar F04-->
 											<div class="col-6 col-sm-6 col-md-1 py-1 colDescargar text-centerr">
@@ -1055,8 +1055,8 @@
 												</form>
 											</div>
 										</div>
-									@endforelse			
-								</div>			
+									@endforelse
+								</div>
 							@empty
 								<!--llenar formmulario  f04-->
 								<div class="col-6 col-sm-6 col-md-2 col-lg-2 col-xl-2 p-0 colLlenar">
@@ -1065,13 +1065,13 @@
 									</a>
 								</div>
 								<div class="col-12 col-sm-12 col-md-12 col-lg-8 colArchivo">
-											
+
 								</div>
 							@endforelse
 							<!--ERROR f04-->
 							@error('f04')
 								<p class="border border-danger rounded-md bg-red-200 w-full text-red-600 p-2 my-2">{{ $message }}</p>
-							@enderror			
+							@enderror
 						</div>
 					</li>
 					<!--F05-->
@@ -1090,7 +1090,7 @@
 								</a>
 							</div>
 							<div class="col-6 col-sm-6 col-md-5 col-lg-3 col-xl-1 p-1 colLlenar  ">
-												
+
 							</div>
 							<!--enviar doc f05-->
 							<div class="col-12 col-sm-12 col-md-12 col-lg-7 p-1 colArchivo">
@@ -1116,18 +1116,18 @@
 																							<button type="submit" class="btn btn-outline-danger btnCancelar" >Cancelar</button>
 																						</div>
 																					</div>
-																					
+
 																				</form>
 																			</div>
 																			<div class="col-12 col-sm-3">
 																				<a href="{{ route('obsevaciones_f05.index') }}">
 																					<button type="submit" class="btn btn-outline-danger divObservacionf02" ><i class="zmdi zmdi-folder-person">  Observaciones</i> </button>
-																				</a>	
+																				</a>
 																			</div>
-																							
-																		</div>																																					
+
+																		</div>
 																	@break
-																
+
 																	@case(1)
 																	<!--pendiente-->
 																	<div class="row">
@@ -1144,7 +1144,7 @@
 																					<div class="col-12 col-sm-3 px-3 py-1">
 																						<button type="submit" class="btn btn-outline-danger btnCancelar" >Cancelar</button>
 																					</div>
-																				</div>																			
+																				</div>
 																			</form>
 																		</div>
 																		<div class="col-12 col-sm-3">
@@ -1159,7 +1159,7 @@
 																				<div class="col-12 col-sm-3 px-3 py-1" >
 																					<div class="divAceptadof02"><i class="zmdi zmdi-check-circle-u">  Aceptado</i> </div>
 																				</div>
-																			</div>																			
+																			</div>
 																	@break
 																	@default
 																			<p>Error</p>
@@ -1168,7 +1168,7 @@
 														</div>
 										@empty
 										<!-- enviar cedula registro con datos-->
-											@forelse ($documentos['documentos'] as $dato)														
+											@forelse ($documentos['documentos'] as $dato)
 												<form action="{{ route('actualizar_f05_estancia.index',[auth()->user()->name,$datoD->name]) }}" method="post" enctype="multipart/form-data" >
 													@csrf
 														<input type="text" class="id_d" value="{{$datoD->id_documentos}}" name="id_docf05">
@@ -1178,11 +1178,11 @@
 														</span>
 														<button type="submit" class="btn btn-outline-info btnSubir">Enviar</button>
 												</form>
-												
+
 											@empty
 												Error
-											@endforelse	
-										@endforelse	
+											@endforelse
+										@endforelse
 								@empty
 								<!-- enviar cedula registro vacio-->
 									<form action="{{ route('subir_f05_estancia.index',[auth()->user()->name,auth()->user()->name]) }}" method="post" enctype="multipart/form-data" >
@@ -1193,13 +1193,13 @@
 										</span>
 										<button type="submit" class="btn btn-outline-info btnSubir">Enviar</button>
 									</form>
-								@endforelse			
-							</div>	
-							<!--error f05-->			
+								@endforelse
+							</div>
+							<!--error f05-->
 							@error('f05')
 								<p class="border border-danger rounded-md bg-red-200 w-full text-red-600 p-2 my-2">{{ $message }}</p>
-							@enderror													
-										
+							@enderror
+
 						</div>
 					</li>
 					<!--Formato reporte de evaluacion-->
@@ -1210,26 +1210,26 @@
 									Reporte de evaluacion de estancia
 								</div>
 							</div>
-						
-								
+
+
 							<div class="col-6 col-sm-12 col-md-3 col-lg-2 col-xl-2 p-1 colDescargar text-left">
 								<a href="{{ route('descarga_reporte_evaluacion_estancia.index') }}">
 									<button type="button" class="btn btn-outline-info btnDescargar"><i class="zmdi zmdi-download"> Descargar</i></button>
 								</a>
 							</div>
 							<div class="col-6 col-sm-6 col-md-5 col-lg-3 col-xl-1 p-1 colLlenar  ">
-												
+
 							</div>
 							<div class="col-12 col-sm-12 col-md-12 col-lg-7 p-1 colArchivo">
-												
-							</div>	
+								<a href="{{route('vistaempleado.index')}}"></a>
+							</div>
 						</div>
 					</li>
 				</ol>
-				
+
 		</div>
 	</section>
-	
+
 	<!--====== Scripts -->
 	<script src="./js/jquery-3.1.1.min.js"></script>
 	<script src="./js/sweetalert2.min.js"></script>
@@ -1238,7 +1238,7 @@
 	<script src="./js/ripples.min.js"></script>
 	<script src="./js/jquery.mCustomScrollbar.concat.min.js"></script>
 	<script src="./js/main.js"></script>
-	
+
 	<script>
 		$.material.init();
 	</script>
@@ -1251,7 +1251,7 @@
 		width:10px;
 	}
 	@media (max-width: 406px){
-	
+
 		.borde{
 			border: 1px solid darkgrey;
 		}

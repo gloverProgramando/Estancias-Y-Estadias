@@ -30,7 +30,7 @@
 
     <style>
         .row-color {
-            background-color: #16355a;   
+            background-color: #16355a;
         }
         h2 {
             color: #fff;
@@ -129,8 +129,8 @@
                             @case(5)
                                 <option value="5">Servicio Social</option>
                                 @break
-                            @default   
-                        @endswitch                        
+                            @default
+                        @endswitch
                     </select>
                 </div>
                 <div class="form-group col-md-6">
@@ -422,9 +422,9 @@
             <div class="pt-1 mb-4">
                             <button class="btn btn-dark btn-lg btn-block" type="submit">Guardar</button>
                         </div>
-            <!--<button class="g-recaptcha" 
-                    data-sitekey="6LedJ78dAAAAAPmUrFR2Qkm3U63zK0Uj0LILa-h3" 
-                    data-callback='onSubmit' 
+            <!--<button class="g-recaptcha"
+                    data-sitekey="6LedJ78dAAAAAPmUrFR2Qkm3U63zK0Uj0LILa-h3"
+                    data-callback='onSubmit'
                     data-action='submit'>Submit</button>-->
         </form>
         @else
